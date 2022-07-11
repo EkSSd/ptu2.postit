@@ -16,6 +16,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("created at"), auto_now=True)
 
+    def __str__(self):
+        return _('{} by {}').format(self.title, str(self.user), str(self.created_at))
 
 class Comments(models.Model):
     post = models.ForeignKey(
@@ -34,6 +36,8 @@ class Comments(models.Model):
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("created at"), auto_now=True)
 
+    def __str__(self):
+        return _('{} by {}').format(str(self.post), str(self.user), str(self.created_at))
 
 
 class PostLike(models.Model):
