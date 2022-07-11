@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 
 
 class Post(models.Model):
-    title = models.CharField(_("title"), max_lenght=150)
+    title = models.CharField(_("title"), max_length=150)
     content = models.TextField(_("content"))
     user = models.ForeignKey(
         get_user_model(),
